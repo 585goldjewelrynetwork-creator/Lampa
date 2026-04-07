@@ -54,13 +54,13 @@ body {
   overflow: hidden;
 }
 .left-panel {
-  width: 38%;
-  padding: 20px 24px;
+  width: 32%;
+  padding: 16px 20px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 6px;
   border-right: 1.5px solid #ede7ff;
-  overflow-y: auto;
+  overflow: hidden;
 }
 .panel-label {
   font-size: 11px;
@@ -149,18 +149,17 @@ body {
 .answer-filled.correct-ans { background: #4caf50; }
 .answer-filled.wrong-ans { background: #e53935; }
 
-.mascot-bottom {
+.mascot-left {
+  flex: 1;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-end;
-  gap: 12px;
-  padding: 8px 0 0 0;
-  flex-shrink: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
 }
 .mascot-img {
-  width: 300px;
-  height: 300px;
+  width: 130px;
+  height: 130px;
   object-fit: contain;
   flex-shrink: 0;
   transition: all 0.35s ease;
@@ -174,15 +173,16 @@ body {
   color: #5a3a9e;
   line-height: 1.4;
   position: relative;
-  margin-bottom: 180px;
+  margin-bottom: 10px;
 }
 .mascot-speech::after {
   content: '';
   position: absolute;
-  bottom: 14px;
-  left: -11px;
+  bottom: -11px;
+  left: 50%;
+  transform: translateX(-50%);
   border: 6px solid transparent;
-  border-right-color: #d4c4f5;
+  border-top-color: #d4c4f5;
 }
 
 .footer {
@@ -276,6 +276,10 @@ body {
         <div class="tool-name">Ассессмент</div>
         <div class="tool-hint">Оценка потенциала</div>
       </div>
+      <div class="mascot-left">
+        <div class="mascot-speech" id="mascot-speech">Перетащи карточки к описаниям!</div>
+        <img class="mascot-img" id="mascot-img" src="" alt="mascot" />
+      </div>
     </div>
     <div class="right-panel" id="drop-panel">
       <div class="panel-label">Описания — перетащи нужный инструмент</div>
@@ -328,10 +332,6 @@ body {
         </div>
       </div>
 
-      <div class="mascot-bottom">
-        <img class="mascot-img" id="mascot-img" src="" alt="mascot" />
-        <div class="mascot-speech" id="mascot-speech">Перетащи карточки к описаниям!</div>
-      </div>
     </div>
 
   </div>
@@ -490,4 +490,3 @@ function resetGame() {
 </script>
 </body>
 </html>
-
